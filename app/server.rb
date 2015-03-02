@@ -15,3 +15,8 @@ get '/' do
   @messages = Message.all
   erb :index
 end 
+
+post '/messages' do 
+  Message.create(content: params[:content])
+  redirect to '/'
+end

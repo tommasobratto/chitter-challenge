@@ -3,3 +3,8 @@
     <li> <%= message.content %> </li>
   <% end %>
 </ul>
+
+<form id="new_message" action="/messages" method="post">
+  <input type="text" name="content">
+  <input type="submit" value="send">
+</form>
