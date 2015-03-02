@@ -5,4 +5,5 @@ class Message
   property :id, Serial
   property :content, String 
 
+  # belongs_to :user
 end
