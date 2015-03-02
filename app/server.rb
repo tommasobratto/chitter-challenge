@@ -11,3 +11,7 @@ DataMapper.finalize
 
 DataMapper.auto_upgrade!
 
+get '/' do 
+  @messages = Message.all
+  erb :index
+end 
