@@ -1,8 +1,10 @@
-require './app/server'
-require 'capybara/rspec'
-require 'database_cleaner'
+ENV['RACK_ENV'] = 'test'
 
-Capybara.app = Chitter
+require './app/server'
+require 'database_cleaner'
+require 'capybara/rspec'
+
+Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
 
@@ -20,12 +22,11 @@ RSpec.configure do |config|
   end
 
   config.expect_with :rspec do |expectations|
-   
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
   config.mock_with :rspec do |mocks|
-
     mocks.verify_partial_doubles = true
   end
+
 end
